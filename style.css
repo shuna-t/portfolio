@@ -2,10 +2,10 @@
 
 /* 全体の設定 */
 body {
-    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5; /* 背景を少しグレーに */
+    background-color: #f4f4f4; /* 背景色 */
     color: #333;
     line-height: 1.6;
 }
@@ -13,74 +13,118 @@ body {
 header {
     background-color: #222;
     color: #fff;
-    padding: 40px 20px;
+    padding: 60px 20px;
     text-align: center;
 }
+header h1 { margin: 0; font-size: 2.2rem; letter-spacing: 1px; }
+header p { margin-top: 10px; opacity: 0.8; font-size: 0.9rem; }
 
 main {
-    max-width: 900px;
-    margin: 0 auto;
+    max-width: 900px; /* コンテンツ幅 */
+    margin: 0 auto; /* 中央寄せ */
     padding: 40px 20px;
 }
 
 h2 {
-    border-bottom: 2px solid #333;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #ddd;
     padding-bottom: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    text-align: center; /* 見出しを中央に */
 }
 
-/* ▼▼▼ ここがリスト表示の肝です ▼▼▼ */
+/* プロフィール */
+.profile {
+    text-align: center;
+    margin-bottom: 60px;
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
 
-/* 作品リスト全体を縦並びにする */
+/* 作品リスト（ここからが重要） */
 .works-list {
     display: flex;
-    flex-direction: column; /* 縦方向に積む */
-    gap: 40px; /* 作品ごとの間隔 */
+    flex-direction: column; /* 縦に積む */
+    gap: 30px; /* カードごとの間隔 */
 }
 
-/* ひとつの作品カード */
-.work-item {
-    display: flex; /* 画像と文字を横に並べる */
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    align-items: flex-start;
-    gap: 30px; /* 画像と文字の間隔 */
+/* 横長のカードブロック */
+.work-card {
+    display: flex; /* 横並びレイアウト */
+    background: #fff; /* 白背景 */
+    border-radius: 10px; /* 角丸 */
+    overflow: hidden; /* はみ出し防止 */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* 影をつけて浮き上がらせる */
+    transition: transform 0.2s; /* ホバー時の動き用 */
 }
 
-/* 左側のメディア（動画・画像） */
+.work-card:hover {
+    transform: translateY(-3px); /* カーソルを乗せると少し浮く */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* 左側のメディアエリア（画像・動画） */
 .work-media {
     flex: 0 0 320px; /* 幅を320pxに固定 */
-    width: 320px;
-}
-.work-media img, 
-.work-media iframe {
-    width: 100%;
-    border-radius: 4px;
-    display: block;
-    border: 1px solid #ddd;
+    background: #000;
+    display: flex;
+    align-items: center; /* 上下中央揃え */
+    justify-content: center;
 }
 
-/* 右側のテキスト情報 */
-.work-info {
-    flex: 1;
+.work-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 枠いっぱいにトリミング */
+    display: block;
+}
+
+/* YouTube用の調整 */
+.video-container {
+    width: 100%;
+    height: 100%;
+}
+.video-container iframe {
+    width: 100%;
+    height: 100%; /* 高さを親要素に合わせる */
+    min-height: 200px;
+}
+
+/* 右側のテキストエリア */
+.work-content {
+    flex: 1; /* 残りの幅を全部使う */
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 文字を上下中央寄りに */
+}
+
+.work-category {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
 }
 
 .work-title {
-    font-size: 1.4rem;
-    font-weight: bold;
     margin: 0 0 10px 0;
-    display: block;
+    font-size: 1.4rem;
+    color: #222;
 }
 
-/* スマホで見るときは縦積みに戻す */
+/* スマホ対応：画面が狭いときは縦積みに戻す */
 @media (max-width: 768px) {
-    .work-item {
-        flex-direction: column;
+    .work-card {
+        flex-direction: column; /* 縦並び */
     }
     .work-media {
-        width: 100%;
         flex: none;
+        width: 100%;
+        height: 200px; /* スマホ時の画像の高さ */
     }
 }
