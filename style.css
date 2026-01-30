@@ -84,12 +84,17 @@ h2 {
 /* YouTube用の調整 */
 .video-container {
     width: 100%;
-    height: 100%;
+    /* 動画の横幅が大きすぎる場合は、ここで最大幅を制限します（例: 500px） */
+    max-width: 100%; 
+    /* ここが魔法の呪文です：比率を16:9に固定 */
+    aspect-ratio: 16 / 9; 
+    margin: 0 auto; /* 中央寄せ */
 }
+
 .video-container iframe {
     width: 100%;
-    height: 100%; /* 高さを親要素に合わせる */
-    min-height: 200px;
+    height: 100%;
+    border-radius: 8px; /* 角を少し丸くする */
 }
 
 /* 右側のテキストエリア */
@@ -127,4 +132,87 @@ h2 {
         width: 100%;
         height: 200px; /* スマホ時の画像の高さ */
     }
+}
+
+/* ▼▼▼ 追加：Moreボタンのデザイン ▼▼▼ */
+.more-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 20px;
+    background-color: transparent;
+    border: 1px solid #333;
+    color: #333;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    width: fit-content; /* 文字の長さに合わせる */
+}
+
+.more-btn:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* ▼▼▼ 追加：モーダルウィンドウ（ポップアップ） ▼▼▼ */
+/* 背景の黒い膜 */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* 半透明の黒 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* 最前面に */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+/* ポップアップが表示されるときの状態 */
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 白い箱部分 */
+.modal-content {
+    background: #fff;
+    padding: 40px;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transform: translateY(-20px);
+    transition: transform 0.3s;
+
+    /* ▼▼▼ ここを追加してください ▼▼▼ */
+    /* 1. 高さは最大でも画面の90%までにする */
+    max-height: 90vh;
+    /* 2. 中身がそれより多い場合は、縦スクロールバーを出す */
+    overflow-y: auto;
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+/* 閉じるボタン（×） */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+#modal-title {
+    margin-top: 0;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
 }
