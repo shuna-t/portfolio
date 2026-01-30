@@ -16,74 +16,68 @@
     <main>
         <section class="profile">
             <h2>About Me</h2>
-            <p>明治大学 総合数理学部 先端メディアサイエンス学科</p>
-            <p>Web、音響処理、3Dグラフィックスを学んでいます。<br>
-            趣味はギターとドライブです。</p>
+            <p>明治大学 総合数理学部 先端メディアサイエンス学科 2年<br>
+            Web・音響処理・3Dグラフィックス・音楽制作</p>
         </section>
 
-        <section>
+        <section class="works-section">
             <h2>Works</h2>
-            <section>
-            <h2>Works</h2>
+            
             <div class="works-list">
                 
-                <article class="work-item">
+                <article class="work-card">
                     <div class="work-media">
-                        <iframe width="100%" height="180" src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube" frameborder="0" allowfullscreen></iframe>
+                        <div class="video-container">
+                             <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
                     </div>
-                    <div class="work-info">
-                        <span class="work-title">Circle Performance (DREAMER)</span>
-                        <p>所属サークルでのバンド演奏動画です。ギターを担当しています。</p>
+                    <div class="work-content">
+                        <span class="work-category">Band / Guitar</span>
+                        <h3 class="work-title">Circle Performance (DREAMER)</h3>
+                        <p>所属サークル「DREAMER」でのバンド演奏動画。ホーンセクションを含む大編成バンドでギターを担当しています。</p>
                     </div>
                 </article>
 
-                <article class="work-item">
+                <article class="work-card">
                     <div class="work-media">
-                        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2211099383&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/dxn37zrxqv3a" title="shunsuke taneda" target="_blank" style="color: #cccccc; text-decoration: none;">shunsuke taneda</a> · <a href="https://soundcloud.com/dxn37zrxqv3a/gui-xiang-4" title="帰郷" target="_blank" style="color: #cccccc; text-decoration: none;">帰郷</a></div>
+                        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/YOUR_TRACK_ID&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
                     </div>
-                    <div class="work-info">
-                        <span class="work-title">Original Music</span>
-                        <p>作詞・作曲・編曲を行ったオリジナル楽曲です。</p>
+                    <div class="work-content">
+                        <span class="work-category">DTM / Composition</span>
+                        <h3 class="work-title">Original Music</h3>
+                        <p>Logic Proを使用して制作したオリジナル楽曲。Pops, Soul, Funk等のジャンルをベースに作詞・作曲・編曲を行っています。</p>
                     </div>
                 </article>
 
-                <article class="work-item">
+                <article class="work-card">
                     <div class="work-media">
                         <img src="chasta.png" alt="茶スタ予約システム">
                     </div>
-                    <div class="work-info">
-                        <span class="work-title">茶スタ予約システム</span>
-                        <p>Google Apps Script (GAS) とスプレッドシートを使用したスタジオ予約管理システム。</p>
+                    <div class="work-content">
+                        <span class="work-category">Google Apps Script</span>
+                        <h3 class="work-title">スタジオ予約システム「茶スタ」</h3>
+                        <p>サークルのスタジオ予約管理を自動化するシステム。スプレッドシートと連携し、重複予約の防止やカレンダー表示を実装しました。</p>
                     </div>
                 </article>
 
-                <article class="work-item">
+                <article class="work-card">
                     <div class="work-media">
                         <img src="chords-master.png" alt="CHORDS MASTER">
                     </div>
-                    <div class="work-info">
-                        <span class="work-title">CHORDS MASTER</span>
-                        <p>Webブラウザ上でコード進行を学習・試聴できるアプリケーション。</p>
-                        <p><a href="#">View Project &rarr;</a></p>
-                    </div>
-                </article>
-
-                <article class="work-item">
-                    <div class="work-media">
-                        <div style="background:#eee; height:180px; display:flex; align-items:center; justify-content:center;">
-                            <span>Video Placeholder</span>
-                        </div>
-                    </div>
-                    <div class="work-info">
-                        <span class="work-title">Creative Movie Work</span>
-                        <p>授業課題または自主制作で作成した映像作品です。</p>
+                    <div class="work-content">
+                        <span class="work-category">JavaScript / Web Audio API</span>
+                        <h3 class="work-title">CHORDS MASTER</h3>
+                        <p>ブラウザ上でコード進行を学習・試聴できるWebアプリ。音楽理論の学習支援を目的に開発しました。</p>
                     </div>
                 </article>
 
             </div>
         </section>
-        </section>
     </main>
+
+    <footer>
+        <p>&copy; 2026 Shunsuke Taneda</p>
+    </footer>
 
 </body>
 </html>
