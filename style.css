@@ -30,7 +30,39 @@ h2 {
     border-bottom: 2px solid #ddd;
     padding-bottom: 10px;
     margin-bottom: 40px;
-    text-align: center; /* 見出しを中央に */
+    text-align: /* === style.css === */
+
+/* 全体の設定 */
+body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #222;
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+}
+header h1 { margin: 0; font-size: 2.2rem; letter-spacing: 1px; }
+header p { margin-top: 10px; opacity: 0.8; font-size: 0.9rem; }
+
+main {
+    max-width: 1000px; /* 3列がきれいに収まるように少し幅広に */
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+    text-align: center;
 }
 
 /* プロフィール */
@@ -43,142 +75,122 @@ h2 {
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-/* 作品リスト（ここからが重要） */
+/* ▼▼▼ 作品リスト（グリッドレイアウト設定） ▼▼▼ */
 .works-list {
-    display: flex;
-    flex-direction: column; /* 縦に積む */
-    gap: 30px; /* カードごとの間隔 */
+    display: grid;
+    /* PCなら3列、タブレット2列、スマホ1列に自動調整する魔法のコード */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px; /* カード同士の隙間 */
+    width: 100%;
 }
 
-/* 横長のカードブロック */
+/* カード本体 */
 .work-card {
-    display: flex; /* 横並びレイアウト */
-    background: #fff; /* 白背景 */
-    border-radius: 10px; /* 角丸 */
-    overflow: hidden; /* はみ出し防止 */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* 影をつけて浮き上がらせる */
-    transition: transform 0.2s; /* ホバー時の動き用 */
+    display: flex;
+    flex-direction: column; /* 中身を縦積み（上が画像、下が文字）にする */
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+    height: 100%; /* 高さを揃える */
 }
 
 .work-card:hover {
-    transform: translateY(-3px); /* カーソルを乗せると少し浮く */
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transform: translateY(-5px); /* ホバーで少し浮く */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
-/* 左側のメディアエリア（画像・動画） */
+/* メディアエリア（画像・動画の枠） */
 .work-media {
-    flex: 0 0 320px; /* 幅を320pxに固定 */
+    width: 100%;
+    height: 200px; /* ★高さを200pxに統一 */
     background: #000;
-    display: flex;
-    align-items: center; /* 上下中央揃え */
-    justify-content: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .work-media img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 枠いっぱいにトリミング */
-    display: block;
+    object-fit: cover; /* 枠いっぱいにトリミングして表示 */
 }
 
-/* YouTube用の調整 */
-.video-container {
-    width: 100%;
-    /* 動画の横幅が大きすぎる場合は、ここで最大幅を制限します（例: 500px） */
-    max-width: 100%; 
-    /* ここが魔法の呪文です：比率を16:9に固定 */
-    aspect-ratio: 16 / 9; 
-    margin: 0 auto; /* 中央寄せ */
-}
-
-.video-container iframe {
+.work-media iframe {
     width: 100%;
     height: 100%;
-    border-radius: 8px; /* 角を少し丸くする */
+    border: none;
 }
 
-/* 右側のテキストエリア */
+/* テキストエリア */
 .work-content {
-    flex: 1; /* 残りの幅を全部使う */
-    padding: 25px;
+    padding: 20px;
+    flex: 1; /* カードの下端を揃えるために余白を埋める */
     display: flex;
     flex-direction: column;
-    justify-content: center; /* 文字を上下中央寄りに */
 }
 
 .work-category {
-    display: inline-block;
-    font-size: 0.8rem;
-    font-weight: bold;
+    font-size: 0.75rem;
     color: #888;
+    margin-bottom: 8px;
+    font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 5px;
 }
 
 .work-title {
+    font-size: 1.2rem;
     margin: 0 0 10px 0;
-    font-size: 1.4rem;
-    color: #222;
+    line-height: 1.4;
+    font-weight: bold;
 }
 
-/* スマホ対応：画面が狭いときは縦積みに戻す */
-@media (max-width: 768px) {
-    .work-card {
-        flex-direction: column; /* 縦並び */
-    }
-    .work-media {
-        flex: none;
-        width: 100%;
-        height: 200px; /* スマホ時の画像の高さ */
-    }
-}
-
-/* ▼▼▼ 追加：Moreボタンのデザイン ▼▼▼ */
-.more-btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 8px 20px;
-    background-color: transparent;
-    border: 1px solid #333;
-    color: #333;
-    cursor: pointer;
-    border-radius: 20px;
+.work-content p {
     font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+    flex: 1; /* ボタンを一番下に押しやる */
+}
+
+/* Moreボタン */
+.more-btn {
+    align-self: flex-start;
+    padding: 6px 15px;
+    font-size: 0.85rem;
+    border: 1px solid #333;
+    border-radius: 20px;
+    background: transparent;
+    cursor: pointer;
     transition: all 0.3s;
-    width: fit-content; /* 文字の長さに合わせる */
 }
 
 .more-btn:hover {
-    background-color: #333;
+    background: #333;
     color: #fff;
 }
 
-/* ▼▼▼ 追加：モーダルウィンドウ（ポップアップ） ▼▼▼ */
-/* 背景の黒い膜 */
+/* ▼▼▼ モーダルウィンドウ（ポップアップ） ▼▼▼ */
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* 半透明の黒 */
+    background-color: rgba(0, 0, 0, 0.6);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* 最前面に */
+    z-index: 1000;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s;
 }
 
-/* ポップアップが表示されるときの状態 */
 .modal-overlay.active {
     opacity: 1;
     visibility: visible;
 }
 
-/* 白い箱部分 */
 .modal-content {
     background: #fff;
     padding: 40px;
@@ -189,19 +201,14 @@ h2 {
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     transform: translateY(-20px);
     transition: transform 0.3s;
-
-    /* ▼▼▼ ここを追加してください ▼▼▼ */
-    /* 1. 高さは最大でも画面の90%までにする */
-    max-height: 90vh;
-    /* 2. 中身がそれより多い場合は、縦スクロールバーを出す */
-    overflow-y: auto;
+    max-height: 90vh; /* 画面からはみ出さない設定 */
+    overflow-y: auto; /* スクロールバー設定 */
 }
 
 .modal-overlay.active .modal-content {
     transform: translateY(0);
 }
 
-/* 閉じるボタン（×） */
 .close-btn {
     position: absolute;
     top: 15px;
@@ -215,4 +222,18 @@ h2 {
     margin-top: 0;
     border-bottom: 1px solid #ddd;
     padding-bottom: 10px;
+}
+
+.video-container {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* 横幅に合わせて高さを自動計算する魔法のコード */
+    height: auto; /* 高さは自動にする */
+    margin: 0 auto;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block; /* 隙間対策 */
 }
