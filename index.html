@@ -55,6 +55,39 @@
 
                 <article class="work-card">
                     <div class="work-media">
+                        <div class="work-media">
+                        <img src="tom_saigen.png" alt="解析画像" style="width:100%; border-radius:4px; border:1px solid #eee;">
+                        </div>
+                    </div>
+                    <div class="work-content">
+                        <span class="work-category">Python / Signal Processing</span>
+                        <h3 class="work-title">ドラムマシン音響解析・再現</h3>
+                        <p>Pythonを用いてドラムマシンのスネアやシンバル音を周波数解析し、その特徴を再現するプロジェクト。</p>
+
+                        <button class="more-btn">More +</button>
+
+                        <div class="detail-text" style="display: none;">
+                            <h4 style="margin-top: 0;">Demo Audio</h4>
+                            <p style="font-size: 0.9rem; margin-bottom: 10px;">再現音声を用いて作成したフレーズ：</p>
+                            
+                            <audio controls src="saigen.mp3" style="width: 100%; margin-bottom: 20px;"></audio>
+                            <h4>プロジェクト概要</h4>
+                            <p>名機と呼ばれるドラムマシンのサウンド（スネア、シンバル等）を解析し、Pythonのみで再現する試みです。<br>
+                           波形の生成からエンベロープ処理、イコライジングまでをPythonスクリプト上で実装しました。</p>
+
+                            <h4 style="margin-top:20px;">実装アルゴリズム</h4>
+                            <ul style="padding-left: 20px; line-height: 1.8;">
+                                <li><strong>音源モデリング:</strong> 音色の成分を分解し、キックなどの「太鼓系」は正弦波のみで、スネアのスナッピーやハイハットなどの「金物系」はホワイトノイズを加算することで再現しました。</li>
+                                
+                                <li><strong>ADSR制御:</strong> 打楽器特有のアタック感や減衰を再現するため、<code>np.geomspace</code> を用いた指数関数的なカーブを持つADSRエンベロープジェネレーターを自作しました。</li>
+                                <li><strong>音質補正:</strong> イコライザー関数に周波数解析から得たゲイン値を適用し、実機に近い周波数特性へ整形しました。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="work-card">
+                    <div class="work-media">
                         <img src="chasutayoyaku.JPG" alt="茶スタ予約システム">
                     </div>
                     <div class="work-content">
@@ -82,7 +115,7 @@
 
                 <article class="work-card">
                     <div class="work-media">
-                        <img src="Ambient.jpeg" alt="Ambientサムネイル">
+                        <img src="Ambient.jpeg" alt="Ambientサムネイル" style="width:100%; border-radius:4px; border:1px solid #eee;">
                     </div>
                     <div class="work-content">
                         <span class="work-category">Video Editing</span>
@@ -101,36 +134,7 @@
                     </div>
                 </article>
 
-                <article class="work-card">
-                    <div class="work-media">
-                        <div style="width:100%; height:100%; background:#eee; display:flex; align-items:center; justify-content:center; color:#555;">
-                            Analysis Graph
-                        </div>
-                    </div>
-                    <div class="work-content">
-                        <span class="work-category">Python / Signal Processing</span>
-                        <h3 class="work-title">ドラムマシン音響解析・再現</h3>
-                        <p>Pythonを用いてドラムマシンのスネアやシンバル音を周波数解析し、その特徴を再現するプロジェクト。</p>
-
-                        <button class="more-btn">More +</button>
-
-                        <div class="detail-text" style="display: none;">
-                            <h4>プロジェクト概要</h4>
-                            <p>名機と呼ばれるドラムマシンのサウンド（スネア、シンバル等）をデジタル信号処理によって再現する試みです。<br>
-                            Pythonライブラリ（NumPy, SciPyなど）を使用し、オリジナル音源の周波数スペクトルを解析しました。</p>
-
-                            <h4 style="margin-top:20px;">技術的アプローチ</h4>
-                            <ul style="padding-left: 20px; line-height: 1.8;">
-                                <li><strong>FFT解析:</strong> 高速フーリエ変換を用いて、ターゲットとなる音源の周波数特性を可視化・分析。</li>
-                                <li><strong>スペクトルマッチング:</strong> イコライザー関数を実装し、ホワイトノイズ等の基本波形をターゲットの周波数特性に近づける処理を行いました。</li>
-                            </ul>
-                            
-                            <p style="margin-top: 15px;">
-                                <a href="#" target="_blank" style="text-decoration:underline; color:#333;">GitHubでコードを見る &rarr;</a>
-                            </p>
-                        </div>
-                    </div>
-                </article>
+                
 
                 <article class="work-card">
                     <div class="work-media">
