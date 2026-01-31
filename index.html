@@ -31,7 +31,7 @@
                     </div>
                     <div class="work-content">
                         <span class="work-category">Processing</span>
-                        <h3 class="work-title">CHORDS MASTER</h3>
+                        <h3 class="work-title">CHORDS MASTER (2024)</h3>
                         <p>ゲーム感覚でギターコードを学習できるプログラム。</p>
                         
                         <button class="more-btn">More +</button>
@@ -41,45 +41,39 @@
                                  <iframe src="https://www.youtube.com/embed/0FxGO-MPIfo" title="CHORDS MASTER Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                             <p>オーディオインターフェース経由でギターを接続し、ゲーム感覚でコード（和音）を習得できるアプリケーションです。</p>
-
-                            <h4 style="margin-top:5px;">システムとルール</h4>
-                            <ul style="padding-left: 5px; line-height: 1.8;">
+                            <h4 style="margin-top:20px;">システムとルール</h4>
+                            <ul style="padding-left: 20px; line-height: 1.8;">
                                 <li><strong>リアルタイム解析:</strong> 弾いたギターコードの構成音を解析し、コード名を瞬時に推定します。</li>
                                 <li><strong>バトルシステム:</strong> 敵が出題するコードを正しく弾くことでダメージを与えられます。</li>
                                 <li><strong>クリア条件:</strong> コードを正解し続け、敵のHPを0にすると勝利です。</li>
                             </ul>
-                            
                         </div>
-                        </div>
+                    </div>
                 </article>
 
                 <article class="work-card">
                     <div class="work-media">
-                        <div class="work-media">
-                        <img src="tom_saigen.png" alt="解析画像" style="width:100%; border-radius:4px; border:1px solid #eee;">
-                        </div>
+                        <img src="tom_saigen.png" alt="解析画像">
                     </div>
                     <div class="work-content">
                         <span class="work-category">Python / Signal Processing</span>
-                        <h3 class="work-title">ドラムマシン音響解析・再現</h3>
-                        <p>Pythonを用いてドラムマシンのスネアやシンバル音を周波数解析し、その特徴を再現するプロジェクト。</p>
+                        <h3 class="work-title">ドラムマシン音響解析・再現 (2025)</h3>
+                        <p>Pythonを用いてドラムマシンの音を周波数解析し、再現するプロジェクト。</p>
 
                         <button class="more-btn">More +</button>
 
                         <div class="detail-text" style="display: none;">
                             <h4 style="margin-top: 0;">Demo Audio</h4>
                             <p style="font-size: 0.9rem; margin-bottom: 10px;">再現音声を用いて作成したフレーズ：</p>
-                            
                             <audio controls src="saigen.mp3" style="width: 100%; margin-bottom: 20px;"></audio>
+                            
                             <h4>プロジェクト概要</h4>
-                            <p>名機と呼ばれるドラムマシンのサウンド（スネア、シンバル等）を解析し、Pythonのみで再現する試みです。<br>
-                           波形の生成からエンベロープ処理、イコライジングまでをPythonスクリプト上で実装しました。</p>
+                            <p>名機と呼ばれるドラムマシンのサウンドを解析し、Pythonのみで再現する試みです。</p>
 
                             <h4 style="margin-top:20px;">実装アルゴリズム</h4>
                             <ul style="padding-left: 20px; line-height: 1.8;">
-                                <li><strong>音源モデリング:</strong> 音色の成分を分解し、キックなどの「太鼓系」は正弦波のみで、スネアのスナッピーやハイハットなどの「金物系」はホワイトノイズを加算することで再現しました。</li>
-                                
-                                <li><strong>ADSR制御:</strong> 打楽器特有のアタック感や減衰を再現するため、<code>np.geomspace</code> を用いた指数関数的なカーブを持つADSRエンベロープジェネレーターを自作しました。</li>
+                                <li><strong>音源モデリング:</strong> 「太鼓系」は正弦波のみ、「金物系」はホワイトノイズを加算することで再現しました。</li>
+                                <li><strong>ADSR制御:</strong> <code>np.geomspace</code> を用いた指数関数的なカーブを持つADSRエンベロープジェネレーターを自作しました。</li>
                                 <li><strong>音質補正:</strong> イコライザー関数に周波数解析から得たゲイン値を適用し、実機に近い周波数特性へ整形しました。</li>
                             </ul>
                         </div>
@@ -92,34 +86,62 @@
                     </div>
                     <div class="work-content">
                         <span class="work-category">Google Apps Script</span>
-                        <h3 class="work-title">サークルスタジオ予約システム</h3>
+                        <h3 class="work-title">サークルスタジオ予約システム (2025)</h3>
                         <p>サークルのスタジオ予約管理を自動化するシステム。</p>
 
                         <button class="more-btn">More +</button>
 
                         <div class="detail-text" style="display: none;">
-                            <img src="chasutayoyaku.JPG" alt="茶スタ予約システム" style="width:100%; border-radius:4px; border:1px solid #eee;">
+                            <img src="chasutayoyaku.JPG" alt="茶スタ予約システム" style="width:100%; border-radius:4px; border:1px solid #eee; margin-bottom:15px;">
                             <h4>概要</h4>
                             <p>大学内の2つの音楽サークルが共同利用するスタジオの予約管理システムです。<br>
-                            Google Apps Script (GAS) を用いて開発し、現在も部員たちの間で実際に運用されています。</p>
-                            <h4 style="margin-top:20px;">主な機能と特徴</h4>
-                                <ul style="padding-left: 20px; line-height: 1.8;">
-                                    <li><strong>自動化と連携:</strong> Googleスプレッドシートをデータベースとして連携し、予約の受付から台帳への記入を自動化しました。</li>
-                                    <li><strong>トラブル防止:</strong> 重複予約（ダブルブッキング）をシステムが自動で検知・ブロックする機能を実装し、運営の負担を軽減しました。</li>
-                                    <li><strong>視認性の向上:</strong> 予約状況をカレンダー形式で可視化。空き時間が一目でわかるUIにより、スムーズな予約を可能にしました。</li>
-                                </ul>
+                            GASを用いて開発し、現在も実際に運用されています。</p>
+                            <h4 style="margin-top:20px;">主な機能</h4>
+                            <ul style="padding-left: 20px; line-height: 1.8;">
+                                <li><strong>自動化:</strong> スプレッドシート連携による台帳記入の自動化。</li>
+                                <li><strong>重複防止:</strong> ダブルブッキングを自動検知・ブロック。</li>
+                                <li><strong>可視化:</strong> カレンダー形式で空き時間を表示。</li>
+                            </ul>
                         </div>
-                        </div>
-                    
+                    </div>
                 </article>
 
                 <article class="work-card">
                     <div class="work-media">
-                        <img src="Ambient.jpeg" alt="Ambientサムネイル" style="width:100%; border-radius:4px; border:1px solid #eee;">
+                        <img src="noisescape.png" alt="NoiseScape3D">
+                    </div>
+                    <div class="work-content">
+                        <span class="work-category">Processing / 3DCG</span>
+                        <h3 class="work-title">Noise Scape 3D (2025)</h3>
+                        <p>無限に広がる地形を散策できるインタラクティブ3DCG作品。</p>
+
+                        <button class="more-btn">More +</button>
+
+                        <div class="detail-text" style="display: none;">
+                            <div class="video-container" style="margin-bottom: 20px;">
+                                 <iframe src="https://www.youtube.com/embed/QwTNW3Kz8m0" title="Video Work" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            
+                            <h4>概要</h4>
+                            <p>フライトシミュレーター風の3D空間散策プログラムです。<br>プログラムによって地形がランダムに生成されるため、プレイヤーは終わりのない世界を自由に飛び回ることができます。</p>
+
+                            <h4 style="margin-top:20px;">実装のポイント</h4>
+                            <ul style="padding-left: 20px; line-height: 1.8;">
+                                <li><strong>プロシージャル生成:</strong> <code>noise()</code> 関数（パーリンノイズ）を使用し、不規則でありながら滑らかで自然な起伏を持つ地形を生成しています。</li>
+                                <li><strong>天候システム:</strong> マウスの左クリックで「晴れ → 雪 → 大雪」へと天候を切り替え可能。</li>
+                                <li><strong>カメラワーク:</strong> 3D空間内を自由に移動できる視点操作を実装し、没入感を高めています。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="work-card">
+                    <div class="work-media">
+                        <img src="Ambient.jpeg" alt="Ambientサムネイル">
                     </div>
                     <div class="work-content">
                         <span class="work-category">Video Editing</span>
-                        <h3 class="work-title">映像作品制作</h3>
+                        <h3 class="work-title">Ambient (2025)</h3>
                         <p>授業課題で作成した映像作品。</p>
 
                         <button class="more-btn">More +</button>
@@ -128,27 +150,25 @@
                             <div class="video-container" style="margin-bottom: 20px;">
                                  <iframe src="https://www.youtube.com/embed/CzIf4uPvRD4" title="Video Work" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
+                            
                             <h4>概要</h4>
                             <p>「映像・アニメーション表現」の授業課題として制作した映像作品です。</p>
                         </div>
                     </div>
                 </article>
 
-                
-
                 <article class="work-card">
                     <div class="work-media">
-                        <iframe width="100%" height="320" scrolling="no" frameborder="no" allow="autoplay" 
+                         <iframe width="100%" height="100%" scrolling="no" frameborder="no" allow="autoplay" 
                             src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2211099383&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
                         </iframe>
                     </div>
                     <div class="work-content">
                         <span class="work-category">DTM / Composition</span>
-                        <h3 class="work-title">Original Music</h3>
-                        <p>Studio Oneを使用して制作したオリジナル楽曲。作詞・作曲・編曲を行っています。</p>
+                        <h3 class="work-title">オリジナル楽曲</h3>
+                        <p>Studio Oneを使用したオリジナル楽曲制作。</p>
                     </div>
                 </article>
-              
 
             </div>
         </section>
@@ -157,6 +177,7 @@
     <footer>
         <p>&copy; 2026 Shunsuke Taneda</p>
     </footer>
+
     <div id="modal" class="modal-overlay">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
@@ -166,42 +187,32 @@
     </div>
 
     <script>
-        // 要素を取得
         const modal = document.getElementById('modal');
         const modalTitle = document.getElementById('modal-title');
         const modalBody = document.getElementById('modal-body');
         const closeBtn = document.querySelector('.close-btn');
         const buttons = document.querySelectorAll('.more-btn');
 
-        // 各「More +」ボタンにクリックイベントを追加
         buttons.forEach(btn => {
             btn.addEventListener('click', () => {
-                // クリックされたボタンの親要素(article)から情報を探す
                 const card = btn.closest('.work-card');
                 const title = card.querySelector('.work-title').innerText;
-                // 隠してある詳細テキストを取得
                 const detail = card.querySelector('.detail-text').innerHTML;
-
-                // モーダルに内容をセットして表示
                 modalTitle.innerText = title;
                 modalBody.innerHTML = detail;
                 modal.classList.add('active');
             });
         });
 
-        // 閉じるボタンでモーダルを隠す
         closeBtn.addEventListener('click', () => {
             modal.classList.remove('active');
         });
 
-        // 背景クリックでも閉じるようにする
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
                 modal.classList.remove('active');
             }
         });
     </script>
-</body>
-
 </body>
 </html>
